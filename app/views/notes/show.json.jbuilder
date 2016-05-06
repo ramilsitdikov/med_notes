@@ -2,5 +2,5 @@ json.meta do
 end
 
 json.data do
-  json.partial! 'notes/note', note: @note
+  json.extract! @note, :id, :symptoms, :diagnosis, :conclusion, :assigning
 end

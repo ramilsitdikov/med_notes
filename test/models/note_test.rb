@@ -2,7 +2,7 @@ require 'test_helper'
 
 class NoteTest < ActiveSupport::TestCase
 
-  test 'should create notes' do
+  test 'should show notes' do
     note = Note.new
     assert_not note.save
 

@@ -4,13 +4,14 @@ class NotesControllerTest < ActionController::TestCase
   end
 
   test 'should make workflow for note' do
-    post :create, { format: :json, symptoms: "symptoms", diagnosis: "diagnosis", conclusion: "conclusion", assigning: "assigning" }
+    post :create, {format: :json, symptoms: "symptoms", diagnosis: "diagnosis", conclusion: "conclusion", assigning: "assigning" }
     assert_response :created
+    note_id = response_json[:data][:id]
 
-    post :create, { format: :json, diagnosis: "diagnosis", conclusion: "conclusion", assigning: "assigning" }
+    post :create, {format: :json, diagnosis: "diagnosis", conclusion: "conclusion", assigning: "assigning" }
     assert_response :unprocessable_entity
 
-    get :index, { format: :json }
+    get :show, { format: :json, id: note_id }
     assert_response :success
   end
 end

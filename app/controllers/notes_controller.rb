@@ -8,9 +8,9 @@ class NotesController < ApplicationController
     end
   end
 
-  def index
-    @notes = Note.all
-    @total = @notes.count
+  def show
+    @note = Note.find_by(id: params[:id])
+    render :show
   end
 
   private
