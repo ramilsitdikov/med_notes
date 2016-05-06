@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def main
-    render :main
+    render nothing: true
   end
 
 end
