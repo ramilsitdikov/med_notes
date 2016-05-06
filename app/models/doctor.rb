@@ -7,7 +7,7 @@ class Doctor < ActiveRecord::Base
 
   def request_access(patient_id)
     patient = Patient.find_by(id: patient_id)
-    patient.generate_access_password
+    patient.generate_access_code
   end
 end
 
