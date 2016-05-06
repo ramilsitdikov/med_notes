@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "pages#main"
   resources :notes, only: [:create, :show], defaults: { format: :json }
   resources :patients, only: [:create, :show], defaults: { format: :json } do
     collection do
