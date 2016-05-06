@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get '/start_bot', to: 'bots#start', defaults: { format: :json }
   resources :notes, only: [:create, :show], defaults: { format: :json }
   resources :patients, only: [:create, :show], defaults: { format: :json } do
     collection do
