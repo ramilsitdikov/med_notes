@@ -6,6 +6,9 @@ gem 'rails', '4.2.5.1'
 
 # Postgres db
 gem 'pg'
+group :production do
+  gem 'rails_12factor'
+end
 
 # Telegram bot
 gem 'telegram-bot-ruby'
